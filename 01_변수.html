@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="a">
+        a
+    </div>
+    <ul class="b">
+        <li>meun01</li>
+        <li>meun02</li>
+        <li>meun03</li>
+        <li>meun04</li>
+        <li>meun05</li>
+    </ul>
+    <script>
+        const A = 1;
+        const B = '1';
+        const C = true;
+
+        const a = document.querySelector('.a');
+        const b = document.querySelector('.b');
+        const c = document.querySelectorAll('.b li');
+
+        // $('.b li')
+        console.log(a, b, c, c[0], [...c]);
+        a.style.display = 'none';
+        c[4].style.display = 'none';
+        // c[1].innerHTML = '<strong>내용이 변함';
+        // c[1].innerText = `<strong>내용이 변함 이게 뭔지 
+        //     모르겠지만 쓰라니깐`;
+        // innerText는 줄바꿈이 자동으로 된다 <br>안써도
+
+
+        for (let i = 0; i < c.length; i++) {
+            c[i].innerHTML = '01_li를 바꿔보자';
+        };
+
+        c.forEach((it, idx) => it.innerHTML = `02_li를 바꿔보자 ${idx}`)
+
+        console.log(
+            typeof (A),
+            typeof (B),
+            typeof (C),
+            typeof (a),
+            typeof (b),
+            typeof (c),
+            typeof (c[0]),
+            typeof ([...c]),
+        )
+    </script>
+</body>
+
+</html>

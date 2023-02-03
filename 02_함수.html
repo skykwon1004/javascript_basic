@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .top_banner {
+            background: tomato;
+            height: 100px;
+            transition: 0.5s;
+        }
+
+        .top_banner.on {
+            height: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top_banner"></div>
+    <h1></h1>
+    <button>click</button>
+    <script>
+        const BTN = document.querySelector('button');
+        const H1 = document.querySelector('h1');
+
+        const kim = function () {
+            console.log(2);
+        }
+
+        const WN = function () {
+            H1.innerHTML = '여기에 h1 글을 넣어'
+        }
+
+        const HAHA = () => H1.innerHTML = '하이 화살표함수';
+
+        const S = function () {
+            this.classList.add('on');
+            console.log(this)
+        }
+
+        const AS = e => {
+            //this.classList.add('on');
+            // console.log(this, e, e.target);
+            const TG = e.target;
+            console.log(TG)
+            TG.classList.toggle('on')
+        }
+        //  = () => 화살표 함수에서는 this 못씀 클릭한 그것이 선택안되고 윈도우가 선택된다
+        // 그래서 = e =>  e.target 이걸 치면 this로 인식함
+
+        const TOP_BANNER = document.querySelector('.top_banner');
+
+        let gg = true;
+        const HTB = e => {
+            TOP_BANNER.classList.toggle('on')
+            const TG = e.target;
+
+            if(gg) {
+                TG.innerHTML = '열기';
+            } else {
+                TG.innerHTML = '닫기';
+            }
+
+            gg = !gg;
+            console.log(gg)
+        }
+
+        BTN.addEventListener('click', HTB);
+
+
+        function lee() {
+            console.log(1);
+        }
+        // 함수는 실행 명령 밑에 줄에 있어도 끌어올려져서 실행되기 때문에 밑에 있어도 된다
+
+
+        // lee();
+
+    </script>
+</body>
+
+</html>
